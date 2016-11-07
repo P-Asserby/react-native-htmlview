@@ -23,7 +23,7 @@ const baseStyles = StyleSheet.create({
   },
 })
 
-class HtmlView extends Component {
+export default class HTMLView extends Component {
   constructor() {
     super()
     this.state = {
@@ -76,7 +76,9 @@ class HtmlView extends Component {
   }
 }
 
-HtmlView.propTypes = {
+module.exports = HTMLView;
+
+exports.propTypes = {
   value: PropTypes.string,
   stylesheet: PropTypes.object,
   onLinkPress: PropTypes.func,
@@ -84,9 +86,7 @@ HtmlView.propTypes = {
   renderNode: PropTypes.func,
 }
 
-HtmlView.defaultProps = {
+exports.defaultProps = {
   onLinkPress: url => Linking.openURL(url),
   onError: console.error.bind(console),
 }
-
-export default HtmlView

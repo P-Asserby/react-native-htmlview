@@ -1,12 +1,12 @@
 {
   "name": "react-native-htmlview",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A component which renders HTML content as native views",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run mocha",
-    "mocha": "node_modules/.bin/mocha --require test/support/setupTestFramework.js --compilers js:babel-register test/*-test.js"
+    "mocha": "mocha --require test/support/setupTestFramework.js --compilers js:babel-register test/*-test.js"
   },
   "devDependencies": {
     "babel-eslint": "6.0.2",
@@ -39,7 +39,9 @@
     "ui"
   ],
   "homepage": "https://github.com/jsdf/react-native-htmlview",
-  "bugs": "https://github.com/jsdf/react-native-htmlview/issues",
+  "bugs": {
+    "url": "https://github.com/jsdf/react-native-htmlview/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jsdf/react-native-htmlview.git"
@@ -47,5 +49,8 @@
   "dependencies": {
     "entities": "^1.1.1",
     "htmlparser2-without-node-native": "^3.9.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }
