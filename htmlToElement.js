@@ -27,7 +27,7 @@ function htmlToElement(rawHtml, opts, done) {
 
       if (node.type == 'text') {
         return (
-          <Text key={index} style={parent ? opts.styles[parent.name] : null}>
+          <Text key={index} style={parent ? opts.styles[parent.name] : {lineHeight:20}}>
             {entities.decodeHTML(node.data)}
           </Text>
         )
@@ -47,8 +47,9 @@ function htmlToElement(rawHtml, opts, done) {
             width: img_w,
             height: img_h,
           }
+
           return (
-            <Image key={index} source={source} style={img_style} />
+            <Image key={index} source={source} style={img_style} attri={Object.assign(node.attribs, {maxWidth:opts.maxWidth})}/>
           )
         }
 
