@@ -27,7 +27,7 @@ function htmlToElement(rawHtml, opts, done) {
 
       if (node.type == 'text') {
         return (
-          <Text key={index} style={parent ? opts.styles[parent.name] : {lineHeight:20}}>
+          <Text key={index} style={parent ? (opts.styles[parent.name] ? opts.styles[parent.name] : (parent.attribs ? parent.attribs : {lineHeight:20})) : {lineHeight:20}}>
             {entities.decodeHTML(node.data)}
           </Text>
         )
