@@ -59,7 +59,7 @@ function htmlToElement(rawHtml, opts, done) {
         }
 
         return (
-          <Text key={index} onPress={linkPressHandler}>
+          <Text key={index} onPress={linkPressHandler} style={opts.textBaseStyle}>
             {node.name == 'pre' ? LINE_BREAK : null}
             {node.name == 'li' ? BULLET : null}
             {domToElement(node.children, node)}

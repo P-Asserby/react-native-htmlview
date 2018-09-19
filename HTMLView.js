@@ -55,7 +55,8 @@ export default class HTMLView extends Component {
       linkHandler: this.props.onLinkPress,
       styles: Object.assign({}, baseStyles, this.props.stylesheet),
       customRenderer: this.props.renderNode,
-    maxWidth: this.props.maxWidth,
+      maxWidth: this.props.maxWidth,
+      textBaseStyle: this.props.textBaseStyle,
     }
 
     htmlToElement(value, opts, (err, element) => {
